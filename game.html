@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="theme-color" content="#1b2735">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<link rel="apple-touch-icon" href="images/webapp-icon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		
+		<title>Cube Dash</title>
+		
+		<!-- CSS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Sarpanch:800" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+	</head>
+	<body onload="startGame()">
+		
+		<div id="cd-modal" class="modal">
+		  <div class="modal-content">
+		    <h2 class="center">GAME OVER</h2>
+				<p class="center">
+					<a href="game.html">Retry</a>
+					<a href="index.html">Quit</a>
+				</p>
+		  </div>
+		</div>
+		
+		<audio id="audioplayer" autoplay></audio>
+	
+		<div id="score">
+			<p id="counter"></p>
+			<p id="total"></p>
+		</div>
+		
+		<div id="countdown">
+			<div id="countdown-number"></div>
+			<svg>
+			  <circle r="69.85699" cx="81" cy="81"></circle>
+			</svg>
+		</div>
+		
+		<p id="song-title" onclick="togglePause()"><i class="fa fa-music"></i> <span id="song-span"></span></p>
+		
+		<!-- JS -->
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/cd.game.js"></script>
+		<script src="js/cd.timer.js"></script>
+		<script src="js/cd.music.js"></script>
+		<script src="js/cd.controls.js"></script>
+		
+		<div id="bottom">
+			<!-- onmousedown="moveup()" onmouseup="clearmove()" -- onmousedown="movedown()" onmouseup="clearmove()" -->
+			<button ontouchstart="moveup()" class="btn left-btn"><i class="fa fa-arrow-up"></i></button>
+			<button ontouchstart="movedown()" class="btn right-btn right"><i class="fa fa-arrow-down"></i></button>
+		</div>
+	</body>
+</html>

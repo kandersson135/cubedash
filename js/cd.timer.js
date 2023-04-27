@@ -1,0 +1,1 @@
+var secondsLabel = document.getElementById("counter");var totalSeconds = 0;setInterval(setTime, 1000);function setTime() {	++totalSeconds;	secondsLabel.innerHTML = totalSeconds;}
